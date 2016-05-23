@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Neighborhood Map - Udacity FEND project 5">
@@ -18,8 +18,8 @@
 
 <nav>
     <div class="nav-wrapper">
-        <a class="brand-logo right">My neighborhood map</a>
-        <ul class="left hide-on-med-and-down">
+        <a class="brand-logo right"></a>
+        <ul class="left">
             <li><a onclick="openNav()"><i class="material-icons">search</i></a></li>
         </ul>
     </div>
@@ -31,11 +31,6 @@
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
-</div>
-
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-<div id="main">
-    ...
 </div>
 
 <div class="row">
@@ -54,10 +49,6 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
-
-    $(document).ready(function () {
-        $("#sidebar").animate({left,})
-    });
 
     var map;
     function initMap() {
