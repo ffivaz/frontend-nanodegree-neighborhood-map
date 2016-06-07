@@ -9,9 +9,6 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
     <link rel="stylesheet" href="css/style.css">
-
-    <script src="js/lib/jquery.js"></script>
-    <script src="js/lib/materialize.min.js"></script>
 </head>
 <body>
 
@@ -27,21 +24,16 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <h3>Objects</h3>
-    <form>
-        <div class="input-field">
-            <i class="material-icons prefix">search</i>
-            <input type="text" placeholder="search" id="search_field">
-        </div>
-    </form>
-
-    <div class="chip">
-        Tag
-        <i class="material-icons">close</i>
+    <div class="input-field">
+        <i class="material-icons prefix">search</i>
+        <input type="text" placeholder="filter" id="search_field" data-bind="textInput: filterList">
     </div>
 
     <div class="collection" data-bind="foreach: locationList">
-        <a href="javascript: void(0)" class="collection-item"
-           data-bind="text: name, click: $parent.clicked, event: { mouseover: $parent.focused, mouseout: $parent.unfocused }"></a>
+        <div data-bind="if: visible">
+            <a href="javascript: void(0)" class="collection-item"
+               data-bind="text: name, click: $parent.clicked, event: { mouseover: $parent.focused, mouseout: $parent.unfocused }"></a>
+        </div>
     </div>
 
 </div>
@@ -49,9 +41,6 @@
 <div class="row">
     <div id="map-container">
         <div id="map">map</div>
-    </div>
-    <div data-bind="foreach: locationList">
-        <div data-bind="id: id, latitude: lat, longitude: long, name: name, md: modalIdLink, map: map"></div>
     </div>
 </div>
 
@@ -70,16 +59,6 @@
 </div>
 
 <script>
-    /* Set the width of the side navigation to 250px */
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    }
-
-    /* Set the width of the side navigation to 0 */
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-
     /* Initialize Google map. Set initial settings. */
     var map;
     function initMap() {
@@ -88,10 +67,13 @@
             zoom: 16
         });
     }
-
 </script>
+
+<script src="js/lib/jquery.js"></script>
+<script src="js/lib/materialize.min.js"></script>
 <script src='js/lib/knockout-3.4.0.js'></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaIrzBL_TB0bW7_HB-2v3HdIHk7zeMbEo&callback=initMap"></script>
+<script src="data/locations.js"></script>
 <script src="js/ko_code.js"></script>
 </body>
 </html>

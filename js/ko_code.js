@@ -1,85 +1,89 @@
 "use strict";
 
-var markers = [];
+/**
+ * This is a constructor function (prototype) to create new markers on the map
+ * Inspiration comes from http://stackoverflow.com/questions/29557938/removing-map-pin-with-search
+ */
+var googleMarkers = function (map, obj) {
 
+    var marker = new google.maps.Marker({
+        map: map,
+        position: new google.maps.LatLng(obj.lat, obj.long),
+        title: obj.name
+    });
 
-var locations = [
-    {
-        id: 1,
-        name: 'Parc de l\'abeille',
-        longText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum molestie placerat. Maecenas venenatis libero eget tellus vehicula, vel feugiat purus vestibulum. Curabitur vitae sagittis risus. Curabitur urna ipsum, pharetra vel lectus at, tristique condimentum lacus. In vitae dolor at mauris mollis ullamcorper sed ac purus. Phasellus orci dui, convallis et neque quis, suscipit fringilla tortor. Cras faucibus magna eu libero rutrum, eget interdum lacus efficitur.',
-        type: 'Park',
-        link: null,
-        lat: 47.10888,
-        long: 6.82964
-    },
-    {
-        id: 2,
-        name: 'Bois du Petit Château',
-        longText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum molestie placerat. Maecenas venenatis libero eget tellus vehicula, vel feugiat purus vestibulum. Curabitur vitae sagittis risus. Curabitur urna ipsum, pharetra vel lectus at, tristique condimentum lacus. In vitae dolor at mauris mollis ullamcorper sed ac purus. Phasellus orci dui, convallis et neque quis, suscipit fringilla tortor. Cras faucibus magna eu libero rutrum, eget interdum lacus efficitur.',
-        type: 'Recreation',
-        link: 'http://www.chaux-de-fonds.ch/musees/zoo',
-        lat: 47.10576,
-        long: 6.82214
-    },
-    {
-        id: 3,
-        name: 'Stade de la Charrière',
-        longText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum molestie placerat. Maecenas venenatis libero eget tellus vehicula, vel feugiat purus vestibulum. Curabitur vitae sagittis risus. Curabitur urna ipsum, pharetra vel lectus at, tristique condimentum lacus. In vitae dolor at mauris mollis ullamcorper sed ac purus. Phasellus orci dui, convallis et neque quis, suscipit fringilla tortor. Cras faucibus magna eu libero rutrum, eget interdum lacus efficitur.',
-        type: 'Sport',
-        link: null,
-        lat: 47.11075,
-        long: 6.83664
-    },
-    {
-        id: 4,
-        name: 'Boulangerie du carrefour',
-        longText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum molestie placerat. Maecenas venenatis libero eget tellus vehicula, vel feugiat purus vestibulum. Curabitur vitae sagittis risus. Curabitur urna ipsum, pharetra vel lectus at, tristique condimentum lacus. In vitae dolor at mauris mollis ullamcorper sed ac purus. Phasellus orci dui, convallis et neque quis, suscipit fringilla tortor. Cras faucibus magna eu libero rutrum, eget interdum lacus efficitur.',
-        type: 'Shopping',
-        link: null,
-        lat: 47.11009,
-        long: 6.82944
-    },
-    {
-        id: 5,
-        name: 'Hôpital de La Chaux-de-Fonds',
-        longText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum molestie placerat. Maecenas venenatis libero eget tellus vehicula, vel feugiat purus vestibulum. Curabitur vitae sagittis risus. Curabitur urna ipsum, pharetra vel lectus at, tristique condimentum lacus. In vitae dolor at mauris mollis ullamcorper sed ac purus. Phasellus orci dui, convallis et neque quis, suscipit fringilla tortor. Cras faucibus magna eu libero rutrum, eget interdum lacus efficitur.',
-        type: 'Service',
-        link: null,
-        lat: 47.11323,
-        long: 6.83179
-    },
-    {
-        id: 6,
-        name: 'Poste de la Charrière',
-        longText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum molestie placerat. Maecenas venenatis libero eget tellus vehicula, vel feugiat purus vestibulum. Curabitur vitae sagittis risus. Curabitur urna ipsum, pharetra vel lectus at, tristique condimentum lacus. In vitae dolor at mauris mollis ullamcorper sed ac purus. Phasellus orci dui, convallis et neque quis, suscipit fringilla tortor. Cras faucibus magna eu libero rutrum, eget interdum lacus efficitur.',
-        type: 'Service',
-        link: null,
-        lat: 47.10835,
-        long: 6.83159
-    }
-];
+    google.maps.event.addListener(marker, 'click', function () {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        $("#modal" + obj.id).openModal();
+        setTimeout(function () {
+            marker.setAnimation(null);
+        }, 750);
+    });
 
-var Location = function(obj) {
-    var self = this;
+    this.gmm = marker; // exposes the marker (used to set animations when focusing or clicking on a link or on the marker)
+
+    this.visible = ko.observable(true); // exposes the visible property
+    // Function looks for changes in the visible property and sets marker visibility accordingly
+    this.visible.subscribe(function (state) {
+        if (state) {
+            marker.setMap(map);
+        } else {
+            marker.setMap(null);
+        }
+    });
+};
+
+/**
+ * This is a constructor function (prototype) to create the main knockoutJS object
+ */
+var Location = function (obj) {
     this.id = ko.observable(obj.id);
     this.name = ko.observable(obj.name);
     this.longText = ko.observable(obj.longText);
     this.type = ko.observable(obj.type);
     this.long = ko.observable(obj.long);
     this.lat = ko.observable(obj.lat);
-    this.modalId = ko.observable("modal" + obj.id);
+    this.modalId = ko.observable("modal" + obj.id); // used to link
     this.modalIdLink = ko.observable("#modal" + obj.id);
+    this.marker = ko.observable(new googleMarkers(map, obj)); // Calls the googleMarker prototype
+
+    var that = this;
+    this.visible = ko.observable(true); // Is used to toggle visibility of the object
+    // Function looks for changes in the visible property and sets marker visibility accordingly
+    this.visible.subscribe(function (state) {
+        if (state) {
+            that.marker().visible(true);
+        } else {
+            that.marker().visible(false);
+        }
+    });
 };
 
-var viewModel = function() {
+/**
+ * This is the main ViewModel function
+ */
+var viewModel = function () {
 
     var self = this;
 
-    self.locationList = ko.observableArray([]);
+    self.locationList = ko.observableArray(); // this is the list of locations used for lists
+    // For each locations (./data/locations.js), push an object of type Location in the observableArray
+    locations.forEach(function (obj) {
+        self.locationList.push(new Location(obj)); // Because of the Location function, this automagically creates the markers on the map.
+    });
 
-    locations.forEach(function(obj) {
-       self.locationList.push( new Location(obj) );
+    self.filterList = ko.observable(); // This is the text that the user types into the filtering dialog
+    // the following function looks for changes in the filtering dialog, and applies the correct filter to list and markers (and toggles visibility accordingly)
+    self.filterList.subscribe(function (val) {
+        var re = new RegExp(val, 'i');
+
+        self.locationList().forEach(function (obj) {
+            if (!obj.name().match(re)) {
+                obj.visible(false);
+            } else {
+                obj.visible(true);
+            }
+        });
     });
 
     self.clickedMarker = ko.observable();
@@ -87,59 +91,31 @@ var viewModel = function() {
     self.clicked = function (obj) {
         self.clickedMarker(obj);
         $(self.clickedMarker().modalIdLink()).openModal();
-        this._mapMarker.setAnimation(google.maps.Animation.BOUNCE);
-        var that = this;
+        obj.marker().gmm.setAnimation(google.maps.Animation.BOUNCE);
         setTimeout(function () {
-            that._mapMarker.setAnimation(null);
+            obj.marker().gmm.setAnimation(null);
         }, 750);
     };
 
     self.focusedMarker = ko.observable();
-
     self.focused = function (obj) {
         self.focusedMarker(obj);
-        this._mapMarker.setAnimation(google.maps.Animation.BOUNCE)
+        obj.marker().gmm.setAnimation(google.maps.Animation.BOUNCE)
     };
-
     self.unfocused = function (obj) {
-        this._mapMarker.setAnimation(null);
+        obj.marker().gmm.setAnimation(null);
     };
-};
-
-/* Many people point out to a custom binding to manage the interaction between Google Maps and KnockOutJS.
- * Here is the one link : http://www.codeproject.com/Articles/387626/BikeInCity-2-KnockoutJS-JQuery-Google-Maps
- * Here it the code... */
-
-ko.bindingHandlers.map = {
-    init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
-        var position = new google.maps.LatLng(allBindingsAccessor().latitude(), allBindingsAccessor().longitude());
-        var marker = new google.maps.Marker({
-            id: allBindingsAccessor().id,
-            map: allBindingsAccessor().map,
-            position: position,
-            title: allBindingsAccessor().name()
-        });
-
-        google.maps.event.addListener(marker, 'click', function () {
-            marker.setAnimation(google.maps.Animation.BOUNCE);
-            $(allBindingsAccessor().md()).openModal();
-            setTimeout(function () {
-                marker.setAnimation(null);
-            }, 750);
-        });
-
-        markers.push(marker);
-        viewModel._mapMarker = marker;
-    },
-    update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
-        var latlng = new google.maps.LatLng(allBindingsAccessor().latitude(), allBindingsAccessor().longitude());
-        viewModel._mapMarker.setPosition(latlng);
-
-        var value = valueAccessor();
-        if (ko.unwrap(value)) {
-            element.focus();
-        }
-    }
 };
 
 ko.applyBindings(new viewModel());
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
