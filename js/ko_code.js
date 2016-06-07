@@ -109,6 +109,8 @@ var viewModel = function () {
 
 ko.applyBindings(new viewModel());
 
+$("#side-nav").hide();
+
 /* Set the width of the side navigation to 250px */
 function openNav() {
     $("#side-nav").show();
@@ -119,16 +121,4 @@ function closeNav() {
     $("#side-nav").hide();
 }
 
-var myOptions = {
-    'width': 300,
-    'height': 200
-};
-
-var myRequest = {
-    'ids': [{'photoId': 1000, 'userId': 187}, {'photoId': 1001, 'userId': 1}, {'photoId': 1003, 'userId': 187}]
-    //47799414
-};
-
-var widget = new panoramio.PhotoWidget('wapiblock', myRequest, myOptions);
-widget.setPosition(0);
 

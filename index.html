@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="http://www.panoramio.com/wapi/wapi.js?v=1 "></script>
 </head>
 <body>
 
@@ -57,15 +56,7 @@
                     <p data-bind="text: longText"></p>
                 </div>
                 <div class="col s12 l4">
-                    <div id="wapiblock">
-                        <div id="div_photo_ex" style="float: right; margin: 10px 15px"></div>
-                        <script type="text/javascript">
-                            var beaches = {'tag': 'beaches'};
-                            var photo_ex_options = {'width': 350, 'height': 200};
-                            var photo_ex_widget = new panoramio.PhotoWidget('div_photo_ex', beaches, photo_ex_options);
-                            photo_ex_widget.setPosition(0);
-                        </script>
-                    </div>
+
                 </div>
             </div>
         </div>
