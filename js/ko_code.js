@@ -10,8 +10,7 @@ var locations = [
         type: 'Park',
         link: null,
         lat: 47.10888,
-        long: 6.82964,
-        highlighted: false
+        long: 6.82964
     },
     {
         id: 2,
@@ -19,8 +18,7 @@ var locations = [
         type: 'Recreation',
         link: 'http://www.chaux-de-fonds.ch/musees/zoo',
         lat: 47.10576,
-        long: 6.82214,
-        highlighted: false
+        long: 6.82214
     },
     {
         id: 3,
@@ -28,8 +26,7 @@ var locations = [
         type: 'Sport',
         link: null,
         lat: 47.11075,
-        long: 6.83664,
-        highlighted: false
+        long: 6.83664
     },
     {
         id: 4,
@@ -37,8 +34,7 @@ var locations = [
         type: 'Shopping',
         link: null,
         lat: 47.11009,
-        long: 6.82944,
-        highlighted: false
+        long: 6.82944
     },
     {
         id: 5,
@@ -46,8 +42,7 @@ var locations = [
         type: 'Service',
         link: null,
         lat: 47.11323,
-        long: 6.83179,
-        highlighted: false
+        long: 6.83179
     },
     {
         id: 6,
@@ -55,8 +50,7 @@ var locations = [
         type: 'Service',
         link: null,
         lat: 47.10835,
-        long: 6.83159,
-        highlighted: false
+        long: 6.83159
     }
 ];
 
@@ -79,16 +73,17 @@ var viewModel = function() {
        self.locationList.push( new Location(obj) );
     });
 
-    this.currentMarker = ko.observable( this.locationList()[0] );
+    self.focusedMarker = ko.observable();
 
     self.highlighted = function (obj) {
-        self.currentMarker(obj);
+        self.focusedMarker(obj);
+        map.update(obj, self.focusedMarker());
     };
 
 };
 
 /* Many people point out to a custom binding to manage the interaction between Google Maps and KnockOutJS.
- * Here is the link : http://www.codeproject.com/Articles/387626/BikeInCity-2-KnockoutJS-JQuery-Google-Maps
+ * Here is the one link : http://www.codeproject.com/Articles/387626/BikeInCity-2-KnockoutJS-JQuery-Google-Maps
  * Here it the code... */
 
 ko.bindingHandlers.map = {
@@ -112,11 +107,9 @@ ko.bindingHandlers.map = {
         viewModel._mapMarker.setPosition(latlng);*/
 
         var value = valueAccessor();
-        if (ko.unwrap(value))
+        if (ko.unwrap(value)) {
             element.focus();
-        else
-            element.blur();
-
+        }
     }
 };
 

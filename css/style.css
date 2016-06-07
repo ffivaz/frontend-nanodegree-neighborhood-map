@@ -50,8 +50,18 @@ nav {
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 18px;
     color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:focus {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #ee6e73;
+    color: #fff;
     display: block;
     transition: 0.3s
 }
@@ -106,4 +116,9 @@ nav {
 ::-moz-placeholder {
 }
 :-ms-input-placeholder {
+}
+
+.selected {
+    background-color: #818181;
+    color: #eee;
 }

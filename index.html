@@ -17,7 +17,7 @@
 
 <nav>
     <div class="nav-wrapper">
-        <a class="brand-logo right">cool neighborhood map</a>
+        <a class="brand-logo right">La Chaux-de-Fonds, CH</a>
         <ul class="left">
             <li><a onclick="openNav()"><i class="material-icons">search</i></a></li>
         </ul>
@@ -35,7 +35,7 @@
     </form>
 
     <div class="collection" data-bind="foreach: locationList">
-            <a href="javascript: void(0)" class="collection-item" data-bind="text: name, mouseover: $parent.highlighted"></a>
+            <a href="javascript: void(0)" class="collection-item" data-bind="text: name, focus: $parent.highlighted"></a>
     </div>
 
 </div>
