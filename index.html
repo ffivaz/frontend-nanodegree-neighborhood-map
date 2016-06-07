@@ -34,8 +34,14 @@
         </div>
     </form>
 
+    <div class="chip">
+        Tag
+        <i class="material-icons">close</i>
+    </div>
+
     <div class="collection" data-bind="foreach: locationList">
-            <a href="javascript: void(0)" class="collection-item" data-bind="text: name, focus: $parent.highlighted"></a>
+        <a href="javascript: void(0)" class="collection-item"
+           data-bind="text: name, click: $parent.clicked, event: { mouseover: $parent.focused, mouseout: $parent.unfocused }"></a>
     </div>
 
 </div>
@@ -45,7 +51,21 @@
         <div id="map">map</div>
     </div>
     <div data-bind="foreach: locationList">
-        <div data-bind="latitude: lat, longitude: long, name: name, map: map"></div>
+        <div data-bind="id: id, latitude: lat, longitude: long, name: name, md: modalIdLink, map: map"></div>
+    </div>
+</div>
+
+<!-- Modals: open when a site is clicked or focused ! -->
+<div data-bind="foreach: locationList">
+    <a class="waves-effect waves-light btn modal-trigger" data-bind="attr: { 'href': modalIdLink }">Modal</a>
+    <div class="modal bottom-sheet" data-bind="attr: { 'id': modalId }">
+        <div class="modal-content">
+            <h4 data-bind="text: name"></h4>
+            <p data-bind="text: longText"></p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
     </div>
 </div>
 
@@ -68,6 +88,7 @@
             zoom: 16
         });
     }
+
 </script>
 <script src='js/lib/knockout-3.4.0.js'></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaIrzBL_TB0bW7_HB-2v3HdIHk7zeMbEo&callback=initMap"></script>

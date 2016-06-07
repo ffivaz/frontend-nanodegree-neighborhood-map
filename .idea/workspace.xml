@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9513516-19bd-4aea-8904-1368c05d278a" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/frontend-nanodegree-neighborhood-map.iml" afterPath="$PROJECT_DIR$/.idea/frontend-nanodegree-neighborhood-map.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ko_code.js" afterPath="$PROJECT_DIR$/js/ko_code.js" />
     </list>
@@ -27,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="37" column="94" selection-start-line="37" selection-start-column="94" selection-end-line="37" selection-end-column="94" />
+            <state relative-caret-position="656">
+              <caret line="42" column="61" selection-start-line="42" selection-start-column="61" selection-end-line="42" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -40,19 +42,25 @@
       <file leaf-file-name="ko_code.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ko_code.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1862">
-              <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
+            <state relative-caret-position="1024">
+              <caret line="127" column="20" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1098">
-              <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="856">
+              <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+              <folding>
+                <marker date="1465281824187" expanded="true" signature="92:134" ph="{...}" />
+                <marker date="1465281824187" expanded="true" signature="148:174" ph="{...}" />
+                <marker date="1465281824187" expanded="true" signature="191:218" ph="{...}" />
+                <marker date="1465281824187" expanded="true" signature="225:269" ph="{...}" />
+                <marker date="1465281824187" expanded="true" signature="420:709" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,9 +75,9 @@
       <list>
         <option value="$PROJECT_DIR$/js/knockout-3.4.0.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/ko_code.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/ko_code.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -84,10 +92,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="-1" />
-    <option name="width" value="1442" />
-    <option name="height" value="871" />
+    <option name="width" value="1920" />
+    <option name="height" value="1054" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -114,7 +120,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -178,6 +183,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -243,6 +249,7 @@
       <workItem from="1465202364184" duration="428000" />
       <workItem from="1465234751423" duration="10544000" />
       <workItem from="1465279538555" duration="1452000" />
+      <workItem from="1465281853029" duration="7529000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit. Index and knockout.js.">
       <created>1463689275827</created>
@@ -276,14 +283,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35771000" />
+    <option name="totallyTimeSpent" value="43300000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-1" width="1442" height="871" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13611111" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13767342" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -322,6 +329,9 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.gitignore" />
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -347,6 +357,36 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ko_code.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1792">
+          <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="976">
+          <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+          <folding>
+            <marker date="1465281824187" expanded="true" signature="92:134" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="148:174" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="191:218" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="225:269" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="420:709" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="846">
           <caret line="47" column="76" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
           <folding />
@@ -365,7 +405,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
           <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
-          <folding />
+          <folding>
+            <marker date="1465281824187" expanded="true" signature="92:134" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="148:174" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="191:218" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="225:269" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="420:709" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -381,7 +427,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
           <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
-          <folding />
+          <folding>
+            <marker date="1465281824187" expanded="true" signature="92:134" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="148:174" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="191:218" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="225:269" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="420:709" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -397,7 +449,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
           <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
-          <folding />
+          <folding>
+            <marker date="1465281824187" expanded="true" signature="92:134" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="148:174" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="191:218" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="225:269" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="420:709" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -413,7 +471,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1465281824187" expanded="true" signature="92:134" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="148:174" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="191:218" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="225:269" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="420:709" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -429,7 +493,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
+          <folding>
+            <marker date="1465281824187" expanded="true" signature="92:134" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="148:174" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="191:218" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="225:269" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="420:709" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -455,34 +525,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="856">
+          <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+          <folding>
+            <marker date="1465281824187" expanded="true" signature="92:134" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="148:174" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="191:218" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="225:269" ph="{...}" />
+            <marker date="1465281824187" expanded="true" signature="420:709" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="37" column="94" selection-start-line="37" selection-start-column="94" selection-end-line="37" selection-end-column="94" />
+        <state relative-caret-position="16">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ko_code.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1862">
-          <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
+        <state relative-caret-position="1024">
+          <caret line="127" column="20" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+        <state relative-caret-position="656">
+          <caret line="42" column="61" selection-start-line="42" selection-start-column="61" selection-end-line="42" selection-end-column="61" />
           <folding />
         </state>
       </provider>
