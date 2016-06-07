@@ -33,10 +33,22 @@ var googleMarkers = function (map, obj) {
     });
 };
 
+var isUndefined = function(obj, ifUndefined) {
+    ifUndefined = typeof ifUndefined !== 'undefined' ? ifUndefined : "Not found";
+    if (obj === undefined) {
+        return ifUndefined;
+    } else {
+        return obj;
+    }
+};
+
 /**
  * This is a constructor function (prototype) to create the main knockoutJS object
  */
 var Location = function (obj) {
+
+    var that = this;
+
     this.id = ko.observable(obj.id);
     this.name = ko.observable(obj.name);
     this.longText = ko.observable(obj.longText);
@@ -47,7 +59,6 @@ var Location = function (obj) {
     this.modalIdLink = ko.observable("#modal" + obj.id);
     this.marker = ko.observable(new googleMarkers(map, obj)); // Calls the googleMarker prototype
 
-    var that = this;
     this.visible = ko.observable(true); // Is used to toggle visibility of the object
     // Function looks for changes in the visible property and sets marker visibility accordingly
     this.visible.subscribe(function (state) {
@@ -57,6 +68,26 @@ var Location = function (obj) {
             that.marker().visible(false);
         }
     });
+
+    this.jsonOK = ko.observable(false);
+
+    if (obj.fs) {
+        this.fsName = ko.observable();
+        this.fsAddress = ko.observable();
+        this.fsPhone = ko.observable();
+        this.fsCity = ko.observable();
+
+        $.getJSON('https://api.foursquare.com/v2/venues/' + obj.fs + '?client_id=B1WZZ24MMR5FJTWHYSBUTJ1A0U2GPTNUUI21SRAQ4E4OZKY5&client_secret= 3LDU3KLUCVTNSOAONSKSGYGRJ5VIMQN2ZV1M1S13AJFETM4K&v=20130815',
+            function (json) {
+                that.fsName(isUndefined(json.response.venue.name));
+                that.fsAddress(isUndefined(json.response.venue.location.address));
+                that.fsPhone(isUndefined(json.response.venue.contact.formattedPhone));
+                that.fsCity(isUndefined(json.response.venue.location.postalCode, "") + " " + isUndefined(json.response.venue.location.city));
+                that.jsonOK(true);
+            }).fail(function (d) {
+            that.jsonOK(false);
+        });
+    }
 };
 
 /**
@@ -85,6 +116,8 @@ var viewModel = function () {
             }
         });
     });
+
+    this.locationList.sort(function (left, right) { return left.name == right.name ? 0 : (left.name < right.name ? -1 : 1) });
 
     self.clickedMarker = ko.observable();
 
@@ -120,5 +153,3 @@ function openNav() {
 function closeNav() {
     $("#side-nav").hide();
 }
-
-

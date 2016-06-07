@@ -1,0 +1,653 @@
+{
+  "meta": {
+    "code": 200,
+    "requestId": "57571d60498e79d5bd1b872d"
+  },
+  "response": {
+    "venue": {
+      "id": "4c38b06da52cb71386705f26",
+      "name": "Parc Zoologique du Bois du Petit Chateau",
+      "contact": {
+        "phone": "+41329676071",
+        "formattedPhone": "+41 32 967 60 71"
+      },
+      "location": {
+        "address": "Rue Alexis-Marie Piaget",
+        "lat": 47.10578093014947,
+        "lng": 6.822865485905128,
+        "postalCode": "2300",
+        "cc": "CH",
+        "city": "La Chaux-de-Fonds",
+        "state": "Neuchâtel",
+        "country": "Suisse",
+        "formattedAddress": [
+          "Rue Alexis-Marie Piaget",
+          "2300 La Chaux-de-Fonds",
+          "Suisse"
+        ]
+      },
+      "canonicalUrl": "https:\/\/foursquare.com\/v\/parc-zoologique-du-bois-du-petit-chateau\/4c38b06da52cb71386705f26",
+      "categories": [
+        {
+          "id": "4bf58dd8d48988d163941735",
+          "name": "Parc",
+          "pluralName": "Parcs",
+          "shortName": "Parc",
+          "icon": {
+            "prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/park_",
+            "suffix": ".png"
+          },
+          "primary": true
+        }
+      ],
+      "verified": false,
+      "stats": {
+        "checkinsCount": 92,
+        "usersCount": 58,
+        "tipCount": 7,
+        "visitsCount": 104
+      },
+      "likes": {
+        "count": 11,
+        "groups": [
+          {
+            "type": "others",
+            "count": 11,
+            "items": []
+          }
+        ],
+        "summary": "11 personnes aiment"
+      },
+      "dislike": false,
+      "ok": false,
+      "rating": 7.2,
+      "ratingSignals": 16,
+      "specials": {
+        "count": 0,
+        "items": []
+      },
+      "photos": {
+        "count": 11,
+        "groups": [
+          {
+            "type": "venue",
+            "name": "Photos de lieux",
+            "count": 11,
+            "items": [
+              {
+                "id": "5749a191498ed088eca5ef40",
+                "createdAt": 1464443281,
+                "source": {
+                  "name": "Swarm for iOS",
+                  "url": "https:\/\/www.swarmapp.com"
+                },
+                "prefix": "https:\/\/irs3.4sqi.net\/img\/general\/",
+                "suffix": "\/132688183_vF9HBc_yXHDInoGmYrojKcsBoAdH4NSXF6h1y7UVcz0.jpg",
+                "width": 1079,
+                "height": 1920,
+                "user": {
+                  "id": "132688183",
+                  "firstName": "Elifouuuu",
+                  "gender": "none",
+                  "photo": {
+                    "prefix": "https:\/\/irs2.4sqi.net\/img\/user\/",
+                    "suffix": "\/132688183-MMPNDHCXQB4DHML3.jpg"
+                  }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "550559dc498e233ea42fc9ac",
+                "createdAt": 1426414044,
+                "source": {
+                  "name": "Swarm for iOS",
+                  "url": "https:\/\/www.swarmapp.com"
+                },
+                "prefix": "https:\/\/irs2.4sqi.net\/img\/general\/",
+                "suffix": "\/57073392_m4BXTm3jsh3aWwuFOjQoHsiwM2SJEhez8LOgN9Q1YdQ.jpg",
+                "width": 1920,
+                "height": 1440,
+                "user": {
+                  "id": "57073392",
+                  "firstName": "Iva",
+                  "lastName": "Krüttli",
+                  "gender": "female",
+                  "photo": {
+                    "prefix": "https:\/\/irs0.4sqi.net\/img\/user\/",
+                    "suffix": "\/57073392-LJDELIBGSKBR0KDJ.jpg"
+                  }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "53c2a6e8498e5a9b94cead68",
+                "createdAt": 1405265640,
+                "source": {
+                  "name": "Swarm for iOS",
+                  "url": "https:\/\/www.swarmapp.com"
+                },
+                "prefix": "https:\/\/irs3.4sqi.net\/img\/general\/",
+                "suffix": "\/22549364_d9aZWdMLcuH0J-0xxuw2ne1UnORAbK_ahw2jQMThY98.jpg",
+                "width": 720,
+                "height": 960,
+                "user": {
+                  "id": "22549364",
+                  "firstName": "Cyril",
+                  "lastName": "Leschaud",
+                  "gender": "male",
+                  "photo": {
+                    "prefix": "https:\/\/irs0.4sqi.net\/img\/user\/",
+                    "suffix": "\/1CH2XXNDLLCUMUNW.jpg"
+                  }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "532c0bfa498ed2b96e6f1a6b",
+                "createdAt": 1395395578,
+                "source": {
+                  "name": "Foursquare for Android",
+                  "url": "https:\/\/foursquare.com\/download\/#\/android"
+                },
+                "prefix": "https:\/\/irs1.4sqi.net\/img\/general\/",
+                "suffix": "\/38906192_KEm9m6qjH-7WUhw8t4xvSmWca4mckxxt4CBMTvGQpsg.jpg",
+                "width": 960,
+                "height": 720,
+                "user": {
+                  "id": "38906192",
+                  "firstName": "Marcolino",
+                  "gender": "male",
+                  "photo": {
+                    "prefix": "https:\/\/irs3.4sqi.net\/img\/user\/",
+                    "suffix": "\/ULGNAHZEQVLAMJDS.jpg"
+                  }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "52ff39f6498e2c56a7fc3165",
+                "createdAt": 1392458230,
+                "source": {
+                  "name": "Foursquare for Android",
+                  "url": "https:\/\/foursquare.com\/download\/#\/android"
+                },
+                "prefix": "https:\/\/irs1.4sqi.net\/img\/general\/",
+                "suffix": "\/38906192_VeAxMDpX2g3R0hHq3XivWxCnrwi2qRb1Peo7diTkroo.jpg",
+                "width": 960,
+                "height": 720,
+                "user": {
+                  "id": "38906192",
+                  "firstName": "Marcolino",
+                  "gender": "male",
+                  "photo": {
+                    "prefix": "https:\/\/irs3.4sqi.net\/img\/user\/",
+                    "suffix": "\/ULGNAHZEQVLAMJDS.jpg"
+                  }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "52dbb07d11d23f81e92f86a9",
+                "createdAt": 1390129277,
+                "source": {
+                  "name": "Foursquare for iOS",
+                  "url": "https:\/\/foursquare.com\/download\/#\/iphone"
+                },
+                "prefix": "https:\/\/irs2.4sqi.net\/img\/general\/",
+                "suffix": "\/74067636_53_3fx8k8xlL3dpx2wbyHF_2eggdCXUCTdVt0-jQJ1U.jpg",
+                "width": 717,
+                "height": 959,
+                "user": {
+                  "id": "74067636",
+                  "firstName": "Ozlem",
+                  "lastName": "Hizarci",
+                  "gender": "female",
+                  "photo": {
+                    "prefix": "https:\/\/irs2.4sqi.net\/img\/user\/",
+                    "suffix": "\/74067636-WPQ0D0JKSIBPSPK0.jpg"
+                  }
+                },
+                "visibility": "public"
+              }
+            ]
+          }
+        ]
+      },
+      "reasons": {
+        "count": 0,
+        "items": []
+      },
+      "hereNow": {
+        "count": 0,
+        "summary": "Personne ici",
+        "groups": []
+      },
+      "createdAt": 1278783597,
+      "tips": {
+        "count": 7,
+        "groups": [
+          {
+            "type": "others",
+            "name": "Tous les conseils",
+            "count": 7,
+            "items": [
+              {
+                "id": "50eb561ce4b05e39328c6889",
+                "createdAt": 1357600284,
+                "text": "trops de bon souvenir trop cool pour les familles avec les enfants petits et grands",
+                "type": "user",
+                "canonicalUrl": "https:\/\/foursquare.com\/item\/50eb561ce4b05e39328c6889",
+                "likes": {
+                  "count": 5,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 5,
+                      "items": [
+                        {
+                          "id": "93636569",
+                          "firstName": "Gérard",
+                          "lastName": "Crameri",
+                          "gender": "male",
+                          "photo": {
+                            "prefix": "https:\/\/irs2.4sqi.net\/img\/user\/",
+                            "suffix": "\/93636569-KFGWQBE0CWUBZXCH.jpg"
+                          }
+                        },
+                        {
+                          "id": "74067636",
+                          "firstName": "Ozlem",
+                          "lastName": "Hizarci",
+                          "gender": "female",
+                          "photo": {
+                            "prefix": "https:\/\/irs2.4sqi.net\/img\/user\/",
+                            "suffix": "\/74067636-WPQ0D0JKSIBPSPK0.jpg"
+                          }
+                        },
+                        {
+                          "id": "46860746",
+                          "firstName": "Isabel",
+                          "lastName": "Garcia",
+                          "gender": "female",
+                          "photo": {
+                            "prefix": "https:\/\/irs2.4sqi.net\/img\/user\/",
+                            "suffix": "\/46860746-JQOVG2EDDVXLUJ00.jpg"
+                          }
+                        },
+                        {
+                          "id": "48073230",
+                          "firstName": "Lucille",
+                          "lastName": "Moncany",
+                          "gender": "female",
+                          "photo": {
+                            "prefix": "https:\/\/irs1.4sqi.net\/img\/user\/",
+                            "suffix": "\/T4R2CHV5PBQIRG1N.jpg"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "5 j'aime"
+                },
+                "logView": true,
+                "todo": {
+                  "count": 0
+                },
+                "user": {
+                  "id": "44747458",
+                  "firstName": "Annamaria",
+                  "lastName": "Bardi",
+                  "gender": "female",
+                  "photo": {
+                    "prefix": "https:\/\/irs1.4sqi.net\/img\/user\/",
+                    "suffix": "\/KLLYLYPKQ2NIA2E0.jpg"
+                  }
+                }
+              },
+              {
+                "id": "4f85b762e4b0ea7937ada738",
+                "createdAt": 1334163298,
+                "text": "Trop cool un parc encore gratis et intéressant avec ça. À consommer sans modération.",
+                "type": "user",
+                "canonicalUrl": "https:\/\/foursquare.com\/item\/4f85b762e4b0ea7937ada738",
+                "likes": {
+                  "count": 2,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 2,
+                      "items": [
+                        {
+                          "id": "93636569",
+                          "firstName": "Gérard",
+                          "lastName": "Crameri",
+                          "gender": "male",
+                          "photo": {
+                            "prefix": "https:\/\/irs2.4sqi.net\/img\/user\/",
+                            "suffix": "\/93636569-KFGWQBE0CWUBZXCH.jpg"
+                          }
+                        },
+                        {
+                          "id": "26289634",
+                          "firstName": "Bornand",
+                          "lastName": "Esther",
+                          "gender": "female",
+                          "photo": {
+                            "prefix": "https:\/\/irs0.4sqi.net\/img\/user\/",
+                            "suffix": "\/X00DVHFXODRGFTX1.jpg"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "2 j'aime"
+                },
+                "logView": true,
+                "todo": {
+                  "count": 1
+                },
+                "user": {
+                  "id": "21760553",
+                  "firstName": "Fred",
+                  "lastName": "Dupuis",
+                  "gender": "male",
+                  "photo": {
+                    "prefix": "https:\/\/irs1.4sqi.net\/img\/user\/",
+                    "suffix": "\/5NY0MZRC1NWD4UZA.jpg"
+                  }
+                }
+              },
+              {
+                "id": "56cb0671498e9455dca4225a",
+                "createdAt": 1456146033,
+                "text": "Très joli parc avec de nombreux aquariums. Et surtout des loutres adorables!! :)",
+                "type": "user",
+                "canonicalUrl": "https:\/\/foursquare.com\/item\/56cb0671498e9455dca4225a",
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "127566902",
+                          "firstName": "Nina",
+                          "lastName": "Gertsch",
+                          "gender": "female",
+                          "photo": {
+                            "prefix": "https:\/\/irs1.4sqi.net\/img\/user\/",
+                            "suffix": "\/127566902-USNFRFST1VF32VMW.jpg"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 personne aime ça"
+                },
+                "logView": true,
+                "todo": {
+                  "count": 0
+                },
+                "user": {
+                  "id": "159814454",
+                  "firstName": "Sophie",
+                  "lastName": "Wanderlust",
+                  "gender": "female",
+                  "photo": {
+                    "prefix": "https:\/\/irs1.4sqi.net\/img\/user\/",
+                    "suffix": "\/159814454-U1BFNRI0L2GATOFF.jpg"
+                  }
+                }
+              },
+              {
+                "id": "50eb56bce4b0e3209ce83448",
+                "createdAt": 1357600444,
+                "text": "andate il faut allez le voir",
+                "type": "user",
+                "canonicalUrl": "https:\/\/foursquare.com\/item\/50eb56bce4b0e3209ce83448",
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "44747458",
+                          "firstName": "Annamaria",
+                          "lastName": "Bardi",
+                          "gender": "female",
+                          "photo": {
+                            "prefix": "https:\/\/irs1.4sqi.net\/img\/user\/",
+                            "suffix": "\/KLLYLYPKQ2NIA2E0.jpg"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 personne aime ça"
+                },
+                "logView": true,
+                "todo": {
+                  "count": 0
+                },
+                "user": {
+                  "id": "44747458",
+                  "firstName": "Annamaria",
+                  "lastName": "Bardi",
+                  "gender": "female",
+                  "photo": {
+                    "prefix": "https:\/\/irs1.4sqi.net\/img\/user\/",
+                    "suffix": "\/KLLYLYPKQ2NIA2E0.jpg"
+                  }
+                }
+              },
+              {
+                "id": "5650bc00498e08b44bf8f7e7",
+                "createdAt": 1448131584,
+                "text": "Un endroit tranquille pour une petite balade gratuite aux milieux des animaux. A ne pas manquer le parc de jeu pour les familles",
+                "type": "user",
+                "canonicalUrl": "https:\/\/foursquare.com\/item\/5650bc00498e08b44bf8f7e7",
+                "likes": {
+                  "count": 0,
+                  "groups": []
+                },
+                "logView": true,
+                "todo": {
+                  "count": 0
+                },
+                "user": {
+                  "id": "93636569",
+                  "firstName": "Gérard",
+                  "lastName": "Crameri",
+                  "gender": "male",
+                  "photo": {
+                    "prefix": "https:\/\/irs2.4sqi.net\/img\/user\/",
+                    "suffix": "\/93636569-KFGWQBE0CWUBZXCH.jpg"
+                  }
+                }
+              },
+              {
+                "id": "563cd787cd10363146830826",
+                "createdAt": 1446827911,
+                "text": "Local animals, Nice for kids",
+                "type": "user",
+                "canonicalUrl": "https:\/\/foursquare.com\/item\/563cd787cd10363146830826",
+                "lang": "en",
+                "likes": {
+                  "count": 0,
+                  "groups": []
+                },
+                "logView": true,
+                "todo": {
+                  "count": 0
+                },
+                "user": {
+                  "id": "145199112",
+                  "firstName": "Marc",
+                  "lastName": "River",
+                  "gender": "male",
+                  "photo": {
+                    "prefix": "https:\/\/irs2.4sqi.net\/img\/user\/",
+                    "suffix": "\/145199112-VFBUNZQH5U2S2V4Z.jpg"
+                  }
+                }
+              },
+              {
+                "id": "5082a5ede4b07dd17bdb0180",
+                "createdAt": 1350739437,
+                "text": "Geeignet für Kinder: Streichelzoo mit Zwergziegen und Esel. Fischotter sind ein Publikumsmagnet.",
+                "type": "user",
+                "canonicalUrl": "https:\/\/foursquare.com\/item\/5082a5ede4b07dd17bdb0180",
+                "lang": "de",
+                "likes": {
+                  "count": 0,
+                  "groups": []
+                },
+                "logView": true,
+                "todo": {
+                  "count": 0
+                },
+                "user": {
+                  "id": "235935",
+                  "firstName": "Nick",
+                  "lastName": "Lüthi",
+                  "gender": "male",
+                  "photo": {
+                    "prefix": "https:\/\/irs0.4sqi.net\/img\/user\/",
+                    "suffix": "\/235935-IHPTMOZVU1U5LJBJ.jpg"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "tags": [],
+      "shortUrl": "http:\/\/4sq.com\/dwskYT",
+      "timeZone": "Europe\/Zurich",
+      "listed": {
+        "count": 1,
+        "groups": [
+          {
+            "type": "others",
+            "name": "Listes venant d'autres personnes",
+            "count": 1,
+            "items": [
+              {
+                "id": "51c822c9498e6ebbea4fbd8f",
+                "name": "Favoris",
+                "description": "",
+                "type": "others",
+                "user": {
+                  "id": "38906192",
+                  "firstName": "Marcolino",
+                  "gender": "male",
+                  "photo": {
+                    "prefix": "https:\/\/irs3.4sqi.net\/img\/user\/",
+                    "suffix": "\/ULGNAHZEQVLAMJDS.jpg"
+                  }
+                },
+                "editable": false,
+                "public": true,
+                "collaborative": false,
+                "url": "\/eberhard_marco\/list\/favoris",
+                "canonicalUrl": "https:\/\/foursquare.com\/eberhard_marco\/list\/favoris",
+                "createdAt": 1372070601,
+                "updatedAt": 1385327338,
+                "followers": {
+                  "count": 0
+                },
+                "listItems": {
+                  "count": 8,
+                  "items": [
+                    {
+                      "id": "v4c38b06da52cb71386705f26",
+                      "createdAt": 1380349191
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "phrases": [
+        {
+          "phrase": "pour les familles",
+          "sample": {
+            "entities": [
+              {
+                "indices": [
+                  27,
+                  44
+                ],
+                "type": "keyPhrase"
+              }
+            ],
+            "text": "... manquer le parc de jeu pour les familles"
+          },
+          "count": 2
+        },
+        {
+          "phrase": "trop cool",
+          "sample": {
+            "entities": [
+              {
+                "indices": [
+                  22,
+                  31
+                ],
+                "type": "keyPhrase"
+              }
+            ],
+            "text": "trops de bon souvenir trop cool pour les familles avec les enfants petits..."
+          },
+          "count": 2
+        },
+        {
+          "phrase": "avec",
+          "sample": {
+            "entities": [
+              {
+                "indices": [
+                  26,
+                  30
+                ],
+                "type": "keyPhrase"
+              }
+            ],
+            "text": "... gratis et intéressant avec ça. À consommer sans modération."
+          },
+          "count": 3
+        }
+      ],
+      "pageUpdates": {
+        "count": 0,
+        "items": []
+      },
+      "inbox": {
+        "count": 0,
+        "items": []
+      },
+      "venueChains": [],
+      "attributes": {
+        "groups": []
+      },
+      "bestPhoto": {
+        "id": "5749a191498ed088eca5ef40",
+        "createdAt": 1464443281,
+        "source": {
+          "name": "Swarm for iOS",
+          "url": "https:\/\/www.swarmapp.com"
+        },
+        "prefix": "https:\/\/irs3.4sqi.net\/img\/general\/",
+        "suffix": "\/132688183_vF9HBc_yXHDInoGmYrojKcsBoAdH4NSXF6h1y7UVcz0.jpg",
+        "width": 1079,
+        "height": 1920,
+        "visibility": "public"
+      }
+    }
+  }
+}
