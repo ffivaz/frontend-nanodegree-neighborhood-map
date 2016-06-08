@@ -4,6 +4,13 @@
 
 The App is available at http://fabienfivaz.ch/frontend-nanodegree-neighborhood-map/.
 
+To run the app, follow these steps :
+
+1. Clone or download the Github repository found at https://github.com/ffivaz/frontend-nanodegree-neighborhood-map
+2. Open ```index.html``` in your browser
+3. The map should appear with a couple of markers. You can filter the locations using the input on the left. On a smartphone, you have to open the list using the search button left on the nav bar.
+4. Enjoy my city!
+
 ### Introduction
 The aim of this project is to build a neighborhood map with the locations of at least five interesting places. The app must be single page and the locations must be shown as markers on the map and items in a list. The app must be responsive and working on computers, laptops and smartphones.
 

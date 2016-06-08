@@ -49,19 +49,20 @@ var GoogleMapsMarker = function (map, obj) {
 /**
  * This is a constructor function (prototype) to create the main knockoutJS object.
  * It creates the knockoutJS objects for each element of a location, including the API call for foursquare (address fetch)
+ * Note: observables are used only for objects that *change*!
  */
 var Location = function (obj) {
 
     var that = this;
 
-    this.id = ko.observable(obj.id);
-    this.name = ko.observable(obj.name);
-    this.longText = ko.observable(obj.longText);
-    this.link = ko.observable(obj.link);
-    this.long = ko.observable(obj.long);
-    this.lat = ko.observable(obj.lat);
-    this.modalId = ko.observable("modal" + obj.id); // used to link
-    this.modalIdLink = ko.observable("#modal" + obj.id);
+    this.id = obj.id;
+    this.name = obj.name;
+    this.longText = obj.longText;
+    this.link = obj.link;
+    this.long = obj.long;
+    this.lat = obj.lat;
+    this.modalId = "modal" + obj.id;
+    this.modalIdLink = ko.observable("#modal" + obj.id); // This has to be an observable
     this.marker = ko.observable(new GoogleMapsMarker(map, obj)); // Calls the GoogleMapsMarker prototype
 
     this.visible = ko.observable(true); // Is used to toggle visibility of the object
@@ -83,17 +84,22 @@ var Location = function (obj) {
         this.fsPhone = ko.observable();
         this.fsCity = ko.observable();
 
-        $.getJSON('https://api.foursquare.com/v2/venues/' + obj.fs + '?client_id=B1WZZ24MMR5FJTWHYSBUTJ1A0U2GPTNUUI21SRAQ4E4OZKY5&client_secret=3LDU3KLUCVTNSOAONSKSGYGRJ5VIMQN2ZV1M1S13AJFETM4K&v=20130815',
-            function (json) {
+        var jsonURL = 'https://api.foursquare.com/v2/venues/' + obj.fs +
+            '?client_id=B1WZZ24MMR5FJTWHYSBUTJ1A0U2GPTNUUI21SRAQ4E4OZKY5' +
+            '&client_secret=3LDU3KLUCVTNSOAONSKSGYGRJ5VIMQN2ZV1M1S13AJFETM4K&v=20130815';
+
+        $.getJSON(jsonURL)
+            .done(function (json) {
                 that.fsName(isUndefined(json.response.venue.name));
                 that.fsAddress(isUndefined(json.response.venue.location.address));
                 that.fsPhone(isUndefined(json.response.venue.contact.formattedPhone));
                 that.fsCity(isUndefined(json.response.venue.location.postalCode, "") + " " + isUndefined(json.response.venue.location.city));
                 that.jsonOK(true);
-            }).error(function (d) {
-            console.log("$.getJSON failed for id: " + obj.id); // returns the id of the failed object
-            that.jsonOK(false); // sets jsonOK to false : not showing the address information.
-        });
+            })
+            .fail(function (d) {
+                console.log("$.getJSON failed for id: " + obj.id); // returns the id of the failed object
+                that.jsonOK(false); // sets jsonOK to false : not showing the address information.
+            });
     }
 };
 
@@ -130,12 +136,12 @@ var viewModel = function () {
     });
 
     /**
-     * Function is called when a Marker on the map is clicked. It bounces and opens the modal.
+     * Function is called when an element in the list is clicked. It bounces and opens the modal.
      */
-    this.clickedMarker = ko.observable();
-    this.clicked = function (obj) {
-        that.clickedMarker(obj);
-        $(that.clickedMarker().modalIdLink()).openModal();
+    this.clickedElem = ko.observable();
+    this.listClicked = function (obj) {
+        that.clickedElem(obj);
+        $(that.clickedElem().modalIdLink()).openModal();
         obj.marker().gmm.setAnimation(google.maps.Animation.BOUNCE);
         setTimeout(function () {
             obj.marker().gmm.setAnimation(null);
@@ -149,20 +155,38 @@ var viewModel = function () {
     this.focusedMarker = ko.observable();
     this.focused = function (obj) {
         that.focusedMarker(obj);
-        obj.marker().gmm.setAnimation(google.maps.Animation.BOUNCE)
+        obj.marker().gmm.setAnimation(google.maps.Animation.BOUNCE);
     };
     this.unfocused = function (obj) {
         obj.marker().gmm.setAnimation(null);
     };
+
+    this.openNavigation = function () {
+        $("#side-nav").show();
+    };
+
+    this.closeNavigation = function () {
+        $("#side-nav").hide();
+    };
 };
 
-ko.applyBindings(new viewModel());
+/**
+ *  Initialize Google map. Set initial settings. And fire KnockoutJS ViewModel when Google Map is loaded.
+ */
+var map;
+var initMap = function () {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 47.10888, lng: 6.82964},
+        zoom: 15
+    });
 
+    // This is here for a reason: Google Maps is loaded asynchronously and we have to make sure it's fully loaded before we go on
+    ko.applyBindings(new viewModel());
+};
 
-function openNav() {
-    $("#side-nav").show();
-}
-
-function closeNav() {
-    $("#side-nav").hide();
-}
+/**
+ * Function called when there is an error loading Google Maps API. It triggers an alert.
+ */
+var googleError = function() {
+    alert("Google map did not load. This app won't work without it");
+};
