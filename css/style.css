@@ -14,60 +14,55 @@ nav {
     margin-left: 20px;
 }
 
-#map-container {
-    position: relative;
+/* Sidenav code loosely borrowed from W3CSchool http://www.w3schools.com/howto/howto_js_sidenav.asp */
+.sidenav {
+    position: absolute;
+    height: 100%;
+    width: 300px;
+    background-color: #fff;
+    overflow-x: hidden;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); /* copied over from materialize */
 }
 
-#map {
-    height: 100vh;
-    overflow: hidden;
+.sidenav h3 {
+    padding: 8px 8px 0 32px;
+    margin-bottom: 0;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
 }
 
-/* Code loosely borrowed from W3CSchool http://www.w3schools.com/howto/howto_js_sidenav.asp */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:focus {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #ee6e73;
+    color: #fff;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Big screen special treatment */
 @media screen and (min-width: 500px) {
     .sidenav {
-        position: absolute;
-        height: 100%;
-        width: 300px;
-        background-color: #fff;
-        overflow-x: hidden;
         padding-top: 60px;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); /* copied over from materialize */
         z-index: 101;
     }
 
-    .sidenav h3 {
-        padding: 8px 8px 0 32px;
-        margin-bottom: 0;
-        font-weight: 500;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-    }
-
-    .sidenav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 18px;
-        color: #818181;
-        display: block;
-    }
-
-    .sidenav a:focus {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 18px;
-        background-color: #ee6e73;
-        color: #fff;
-        display: block;
-    }
-
-    .sidenav a:hover {
-        color: #f1f1f1;
-    }
-
-    #openSearchBtn {
+    .openSearchBtn {
         visibility: hidden;
     }
 
@@ -76,44 +71,12 @@ nav {
     }
 }
 
+/* Small screen special treatment */
 @media screen and (max-width: 500px) {
     .sidenav {
         padding-top: 15px;
-        position: absolute;
-        height: 100%;
-        width: 300px;
-        background-color: #fff;
-        overflow-x: hidden;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); /* copied over from materialize */
         z-index: 1001;
         display: none;
-    }
-
-    .sidenav h3 {
-        padding: 8px 8px 0 32px;
-        margin-bottom: 0;
-        font-weight: 500;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-    }
-
-    .sidenav a {
-        font-size: 18px;
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        color: #818181;
-        display: block;
-    }
-
-    .sidenav a:focus {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 18px;
-        background-color: #ee6e73;
-        color: #fff;
-        display: block;
     }
 
     .brand-logo.right {
@@ -129,26 +92,13 @@ nav {
     }
 }
 
-.input-field input {
-    margin-right: 100px;
-    border-bottom: 1px solid #ee6e73;
+#map-container {
+    position: relative;
 }
 
-.input-field input[type=text]:focus {
-    border-bottom: 2px solid #ee6e73;
-    box-shadow: none;
-}
-
-.input-field .prefix.active {
-    color: #ee6e73;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-
-
-.selected {
-    background-color: #818181;
-    color: #eee;
+#map {
+    height: 100vh;
+    overflow: hidden;
 }
 
 .collection {

@@ -16,7 +16,7 @@
 <nav>
     <div class="nav-wrapper">
         <a class="brand-logo right">La Chaux-de-Fonds</a>
-        <ul class="left" id="openSearchBtn">
+        <ul class="left openSearchBtn">
             <li><a onclick="openNav()"><i class="material-icons">search</i></a></li>
         </ul>
     </div>
@@ -29,14 +29,12 @@
         <i class="material-icons prefix">search</i>
         <input type="text" placeholder="filter" id="search_field" data-bind="textInput: filterList">
     </div>
-
     <div class="collection" data-bind="foreach: locationList">
         <div data-bind="if: visible">
             <a href="javascript: void(0)" class="collection-item"
                data-bind="text: name, click: $parent.clicked, event: { mouseover: $parent.focused, mouseout: $parent.unfocused }"></a>
         </div>
     </div>
-
 </div>
 
 <div class="row">
@@ -75,7 +73,6 @@
         </div>
     </div>
 </div>
-<script src="js/lib/jquery.js"></script>
 <script>
     /* Initialize Google map. Set initial settings. */
     var map;
@@ -87,11 +84,11 @@
     }
 
 </script>
-
+<script src="js/lib/jquery.js"></script>
 <script src="js/lib/materialize.min.js"></script>
 <script src='js/lib/knockout-3.4.0.js'></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaIrzBL_TB0bW7_HB-2v3HdIHk7zeMbEo&callback=initMap"></script>
 <script src="data/locations.js"></script>
-<script src="js/ko_code.js"></script>
+<script src="js/app_code.js"></script>
 </body>
 </html>

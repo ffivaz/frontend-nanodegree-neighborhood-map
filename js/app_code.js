@@ -1,6 +1,19 @@
 "use strict";
 
 /**
+ * Helper function. Checks if obj is undefined and returns a string (or Not found, if nothing is passed).
+ * This function is used in the Foursquare data retrieval to check for missing bits.
+ */
+var isUndefined = function(obj, ifUndefined) {
+    ifUndefined = typeof ifUndefined !== 'undefined' ? ifUndefined : "Not found";
+    if (obj === undefined) {
+        return ifUndefined;
+    } else {
+        return obj;
+    }
+};
+
+/**
  * This is a constructor function (prototype) to create new markers on the map
  * Inspiration comes from http://stackoverflow.com/questions/29557938/removing-map-pin-with-search
  */
@@ -34,20 +47,8 @@ var GoogleMapsMarker = function (map, obj) {
 };
 
 /**
- * Checks if obj is undefined and returns a string (or Not found, if nothing is passed).
- * This function is used in the Foursquare data retrieval to check for missing bits.
- */
-var isUndefined = function(obj, ifUndefined) {
-    ifUndefined = typeof ifUndefined !== 'undefined' ? ifUndefined : "Not found";
-    if (obj === undefined) {
-        return ifUndefined;
-    } else {
-        return obj;
-    }
-};
-
-/**
- * This is a constructor function (prototype) to create the main knockoutJS object
+ * This is a constructor function (prototype) to create the main knockoutJS object.
+ * It creates the knockoutJS objects for each element of a location, including the API call for foursquare (address fetch)
  */
 var Location = function (obj) {
 
@@ -61,7 +62,7 @@ var Location = function (obj) {
     this.lat = ko.observable(obj.lat);
     this.modalId = ko.observable("modal" + obj.id); // used to link
     this.modalIdLink = ko.observable("#modal" + obj.id);
-    this.marker = ko.observable(new GoogleMapsMarker(map, obj)); // Calls the googleMarker prototype
+    this.marker = ko.observable(new GoogleMapsMarker(map, obj)); // Calls the GoogleMapsMarker prototype
 
     this.visible = ko.observable(true); // Is used to toggle visibility of the object
     // Function looks for changes in the visible property and sets marker visibility accordingly
@@ -75,6 +76,7 @@ var Location = function (obj) {
 
     this.jsonOK = ko.observable(false);
 
+    // If fs venue id is in the location data, fetch the address information from the Foursquare API using asynchronous AJAX request
     if (obj.fs) {
         this.fsName = ko.observable();
         this.fsAddress = ko.observable();
@@ -99,20 +101,25 @@ var Location = function (obj) {
  */
 var viewModel = function () {
 
-    var self = this;
+    var that = this;
 
-    self.locationList = ko.observableArray(); // this is the list of locations used for lists
-    // For each locations (./data/locations.js), push an object of type Location in the observableArray
+    /**
+     * For each locations (./data/locations.js), push an object of type Location in the observableArray
+     * This creates the main array with all data used in the view.
+     */
+    this.locationList = ko.observableArray();
     locations.forEach(function (obj) {
-        self.locationList.push(new Location(obj)); // Because of the Location function, this automagically creates the markers on the map.
+        that.locationList.push(new Location(obj));
     });
 
-    self.filterList = ko.observable(); // This is the text that the user types into the filtering dialog
-    // the following function looks for changes in the filtering dialog, and applies the correct filter to list and markers (and toggles visibility accordingly)
-    self.filterList.subscribe(function (val) {
+    /**
+     * Function looks for changes in the filtering dialog,
+     * and applies the correct filter to list and markers (and toggles visibility accordingly)
+     */
+    this.filterList = ko.observable();
+    this.filterList.subscribe(function (val) {
         var re = new RegExp(val, 'i');
-
-        self.locationList().forEach(function (obj) {
+        that.locationList().forEach(function (obj) {
             if (!obj.name().match(re)) {
                 obj.visible(false);
             } else {
@@ -121,25 +128,29 @@ var viewModel = function () {
         });
     });
 
-    this.locationList.sort(function (left, right) { return left.name == right.name ? 0 : (left.name < right.name ? -1 : 1) });
-
-    self.clickedMarker = ko.observable();
-
-    self.clicked = function (obj) {
-        self.clickedMarker(obj);
-        $(self.clickedMarker().modalIdLink()).openModal();
+    /**
+     * Function is called when a Marker on the map is clicked. It bounces and opens the modal.
+     */
+    this.clickedMarker = ko.observable();
+    this.clicked = function (obj) {
+        that.clickedMarker(obj);
+        $(that.clickedMarker().modalIdLink()).openModal();
         obj.marker().gmm.setAnimation(google.maps.Animation.BOUNCE);
         setTimeout(function () {
             obj.marker().gmm.setAnimation(null);
         }, 750);
     };
 
-    self.focusedMarker = ko.observable();
-    self.focused = function (obj) {
-        self.focusedMarker(obj);
+    /**
+     * Function is called when an element in the list is hovered. The corresponding marker bounces.
+     * And it stops when the element in the list is unhovered.
+     */
+    this.focusedMarker = ko.observable();
+    this.focused = function (obj) {
+        that.focusedMarker(obj);
         obj.marker().gmm.setAnimation(google.maps.Animation.BOUNCE)
     };
-    self.unfocused = function (obj) {
+    this.unfocused = function (obj) {
         obj.marker().gmm.setAnimation(null);
     };
 };
