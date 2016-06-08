@@ -161,6 +161,9 @@ var viewModel = function () {
         obj.marker().gmm.setAnimation(null);
     };
 
+    /**
+     * The following functions open and close the list view on a smartphone
+     */
     this.openNavigation = function () {
         $("#side-nav").show();
     };
@@ -187,6 +190,6 @@ var initMap = function () {
 /**
  * Function called when there is an error loading Google Maps API. It triggers an alert.
  */
-var googleError = function() {
+var googleError = function () {
     alert("Google map did not load. This app won't work without it");
 };
