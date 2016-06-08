@@ -4,7 +4,7 @@
  * Helper function. Checks if obj is undefined and returns a string (or Not found, if nothing is passed).
  * This function is used in the Foursquare data retrieval to check for missing bits.
  */
-var isUndefined = function(obj, ifUndefined) {
+var isUndefined = function (obj, ifUndefined) {
     ifUndefined = typeof ifUndefined !== 'undefined' ? ifUndefined : "Not found";
     if (obj === undefined) {
         return ifUndefined;
