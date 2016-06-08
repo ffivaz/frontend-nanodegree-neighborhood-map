@@ -90,8 +90,9 @@ var Location = function (obj) {
                 that.fsPhone(isUndefined(json.response.venue.contact.formattedPhone));
                 that.fsCity(isUndefined(json.response.venue.location.postalCode, "") + " " + isUndefined(json.response.venue.location.city));
                 that.jsonOK(true);
-            }).fail(function (d) {
-            that.jsonOK(false);
+            }).error(function (d) {
+            console.log("$.getJSON failed for id: " + obj.id); // returns the id of the failed object
+            that.jsonOK(false); // sets jsonOK to false : not showing the address information.
         });
     }
 };
