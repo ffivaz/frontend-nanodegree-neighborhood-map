@@ -2,6 +2,8 @@
 ## Udacity FEND project 5
 ## Readme
 
+The App is available at http://fabienfivaz.ch/frontend-nanodegree-neighborhood-map/.
+
 ### Introduction
 The aim of this project is to build a neighborhood map with the locations of at least five interesting places. The app must be single page and the locations must be shown as markers on the map and items in a list. The app must be responsive and working on computers, laptops and smartphones.
 
