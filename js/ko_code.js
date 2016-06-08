@@ -4,7 +4,7 @@
  * This is a constructor function (prototype) to create new markers on the map
  * Inspiration comes from http://stackoverflow.com/questions/29557938/removing-map-pin-with-search
  */
-var googleMarkers = function (map, obj) {
+var GoogleMapsMarker = function (map, obj) {
 
     var marker = new google.maps.Marker({
         map: map,
@@ -56,12 +56,12 @@ var Location = function (obj) {
     this.id = ko.observable(obj.id);
     this.name = ko.observable(obj.name);
     this.longText = ko.observable(obj.longText);
-    this.type = ko.observable(obj.type);
+    this.link = ko.observable(obj.link);
     this.long = ko.observable(obj.long);
     this.lat = ko.observable(obj.lat);
     this.modalId = ko.observable("modal" + obj.id); // used to link
     this.modalIdLink = ko.observable("#modal" + obj.id);
-    this.marker = ko.observable(new googleMarkers(map, obj)); // Calls the googleMarker prototype
+    this.marker = ko.observable(new GoogleMapsMarker(map, obj)); // Calls the googleMarker prototype
 
     this.visible = ko.observable(true); // Is used to toggle visibility of the object
     // Function looks for changes in the visible property and sets marker visibility accordingly
@@ -81,7 +81,7 @@ var Location = function (obj) {
         this.fsPhone = ko.observable();
         this.fsCity = ko.observable();
 
-        $.getJSON('https://api.foursquare.com/v2/venues/' + obj.fs + '?client_id=B1WZZ24MMR5FJTWHYSBUTJ1A0U2GPTNUUI21SRAQ4E4OZKY5&client_secret= 3LDU3KLUCVTNSOAONSKSGYGRJ5VIMQN2ZV1M1S13AJFETM4K&v=20130815',
+        $.getJSON('https://api.foursquare.com/v2/venues/' + obj.fs + '?client_id=B1WZZ24MMR5FJTWHYSBUTJ1A0U2GPTNUUI21SRAQ4E4OZKY5&client_secret=3LDU3KLUCVTNSOAONSKSGYGRJ5VIMQN2ZV1M1S13AJFETM4K&v=20130815',
             function (json) {
                 that.fsName(isUndefined(json.response.venue.name));
                 that.fsAddress(isUndefined(json.response.venue.location.address));
@@ -146,14 +146,11 @@ var viewModel = function () {
 
 ko.applyBindings(new viewModel());
 
-$("#side-nav").hide();
 
-/* Set the width of the side navigation to 250px */
 function openNav() {
     $("#side-nav").show();
 }
 
-/* Set the width of the side navigation to 0 */
 function closeNav() {
     $("#side-nav").hide();
 }
