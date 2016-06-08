@@ -52,18 +52,24 @@
                 <div class="col s12 l6">
                     <h4 data-bind="text: name"></h4>
                     <p data-bind="text: longText"></p>
-                    </div>
-                <div class="col s12 l3">
-                    <p><i class="material-icons">language</i> <a data-bind="attr: { href: link }, text: link"></a></p>
-                    <p data-bind="if: jsonOK"><i class="material-icons">phonelink_ring</i> : <span data-bind="text: fsPhone"></span></p>
                 </div>
                 <div class="col s12 l3">
-                    <p class="address" data-bind="if: jsonOK">
+                    <p><i class="material-icons">language</i> <a data-bind="attr: { href: link }, text: link"></a></p>
+                    <p data-bind="if: jsonOK"><i class="material-icons">phonelink_ring</i> : <span
+                            data-bind="text: fsPhone"></span></p>
+                </div>
+                <div class="col s12 l3">
+                    <p data-bind="if: jsonOK">
                         <strong>Address</strong> (courtesy of Foursquare)<br>
                         <br>
                         <span data-bind="text: fsName"></span><br>
                         <span data-bind="text: fsAddress"></span><br>
                         <span data-bind="text: fsCity"></span><br>
+                    </p>
+                    <p data-bind="ifnot: jsonOK">
+                        <strong>Address</strong><br>
+                        <br>
+                        No information was returned by Foursquare
                     </p>
                 </div>
             </div>
