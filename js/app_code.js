@@ -56,13 +56,13 @@ var Location = function (obj) {
     var that = this;
 
     this.id = obj.id;
-    this.name = obj.name;
+    this.name = ko.observable(obj.name);
     this.longText = obj.longText;
     this.link = obj.link;
     this.long = obj.long;
     this.lat = obj.lat;
-    this.modalId = "modal" + obj.id;
-    this.modalIdLink = ko.observable("#modal" + obj.id); // This has to be an observable
+    this.modalId = ko.observable("modal" + obj.id);
+    this.modalIdLink = ko.observable("#modal" + obj.id);
     this.marker = ko.observable(new GoogleMapsMarker(map, obj)); // Calls the GoogleMapsMarker prototype
 
     this.visible = ko.observable(true); // Is used to toggle visibility of the object
